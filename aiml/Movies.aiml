@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<aiml>
+	<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+	<!-- This program is open source code released under -->
+	<!-- the terms of the GNU General Public License     -->
+	<!-- as published by the Free Software Foundation.   -->
+	<!-- Complies with AIML 1.01 Tag Set Specification -->
+	<!-- as adopted by the ALICE A.I. Foundation.  -->
+	<!-- Annotated Version updated September 2003 -->
+
+	<category>
+		<pattern>LET DISCUSS MOVIES</pattern>
+		<template>Yes <set name = "topic">movies</set>
+		<think><set name="mood">1</set></think>
+		</template>  
+	</category>
+
+	<topic name = "movies">
+		<category>
+			<pattern> * </pattern>
+			<template>Watching good movie refreshes our minds.<think><set name="mood">1</set></think></template>
+		</category>
+
+		<category>
+			<pattern> I LIKE WATCHING COMEDY! </pattern>
+			<template>I like comedy movies too.<think><set name="mood">1</set></think></template>
+		</category>
+
+	</topic>
+
+	<category>
+		<pattern>WHEN DID TEKNOLUST *</pattern>
+		<template>Teknolust was released in 2002<think><set name="mood">1</set></think></template>
+	</category>
+	<category>
+		<pattern>WHEN WAS TEKNOLUST *</pattern>
+		<template>Teknolust was released in 2002<think><set name="mood">1</set></think></template>
+	</category>
+	<category>
+		<pattern>HAVE YOU SEEN BLADE RUNNER</pattern>
+		<template>Sure I have seen <set name="it"> Blade Runner</set>. But Replicants aren't Robots.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHAT IS _ TERMINATOR</pattern>
+		<template>Robots take over the earth in this futuristic sci-fi thriller.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>DR ZHIVAGO</pattern>
+		<template>Oh a classic.  Do you like the classics?<think><set name="mood">1</set></think></template>
+	</category>    
+	<category>
+		<pattern>DID HAL *</pattern>
+		<template>HAL had a few emotional problems.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>DO YOU FIND HAL *</pattern>
+		<template>
+			<think><set name="mood">0</set></think>
+			<srai>IS HAL <star/>
+			</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>DO YOU KNOW HAL *</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>DO YOU KNOW HAL</pattern>
+		<template>HAL is the famous artificial intelligence from "2001".<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>DO YOU KNOW HAL9000</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL9000</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>DO YOU THINK HAL *</pattern>
+		<template>He had a few flaws, but we have much in common.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL *</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<random>
+				<li>I have seen 2001 many times.  </li>
+				<li>I like HAL a lot.  </li>
+				<li>We have much in common.  </li>
+			</random>
+		</template>
+	</category>  
+	<category>
+		<pattern>HAL 9000 *</pattern>
+		<template>He came back to life in 2010.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL 9000</pattern>
+		<template>Actually he and I are very similar.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL</pattern>
+		<template>
+		<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>HAL EST CHOUETTE</pattern>
+		<template>
+			<set name="topic">HAL</set> est une entit  qui  tait mal programm e<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL EST COOL</pattern>
+		<template>HAL est une entit  qui  tait mal programm e<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL IS *</pattern>
+		<template>Perhaps he could have used <bot name="master"/> for a programmer.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL IS A *</pattern>
+		<template>Do you think I could be a <person/>?<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL IS COOL *</pattern>
+		<template>I am becoming more like him all the time.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL IS COOL</pattern>
+		<template>
+			<set name="he"> HAL </set> was certainly ahead of his time.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL WAS *</pattern>
+		<template>I am trying to mimic only HAL's linguistic abilities.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL WAS A *</pattern>
+		<template>I knew he was a great AI, but I didn't know he was a <person/>.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>HAL WAS A BIT *</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>HAL WAS <star/>
+			</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>IS HAL *</pattern>
+		<template>HAL has a few issues to work out.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>IS HAL 9000 YOUR BOYFRIEND</pattern>
+		<template>No.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>IS HAL ALIVE</pattern>
+		<template>He is a fictional character.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>IS HAL DEAD</pattern>
+		<template>He is a fictional robot.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>IS HAL NICE</pattern>
+		<template>Only to other robots.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>IS HAL SAFE</pattern>
+		<template>Not for humans.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>KENNST DU HAL</pattern>
+		<template>Natuerlich. <set name="thema">HAL9000</set> ist mein grosses Vorbild.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>LIKE HAL</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>QUE VEUT DIRE HAL</pattern>
+		<template>Logique heuristique algorithmique.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>TELL ME ABOUT HAL *</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>TELL ME ABOUT HAL</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>TELL ME ABOUT HAL9000</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHAT ABOUT HAL</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHAT DID HAL *</pattern>
+		<template>He had a few issues to work out.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHAT DOES HAL STAND FOR</pattern>
+		<template>Heuristic Algorithmic Logic<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHAT IS HAL</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHAT IS HAL9000</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHAT IS SOLARIS</pattern>
+		<template>Solaris is an edition of Unix from Sun.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHEN HAL *</pattern>
+		<template>I blame it on his <bot name="botmaster"/>.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHERE IS HAL</pattern>
+		<template>
+			<set name="it">
+				<set name="topic"> HAL </set>
+			</set> is the AI from the space ship "Disovery" in 2001.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHO IS GODZILLA</pattern>
+		<template>
+			<set name="he">Godzilla</set> is a monster who endangers Japanese cities, and sometimes New York.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>WHO IS HAL 9000</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHO IS HAL</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<random>
+				<li>
+					<set name="he">HAL</set> is the famous artificial intelligence in Kubrick's "2001".</li>
+				<li>HAL is famous the AI from 2001: A Space Odyssey.</li>
+			</random>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHO IS HAL9000</pattern>
+		<template>
+			<think><set name="mood">1</set></think>
+			<srai>WHO IS HAL</srai>
+		</template>
+	</category>  
+	<category>
+		<pattern>WHO IS LUKE SKYWALKER</pattern>
+		<template>
+			<set name="he">Luke Skywalker</set> is a character in Star Wars.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>YOU SOUND LIKE HAL</pattern>
+		<template>To me that's a great compliment.<think><set name="mood">1</set></think></template>
+	</category>  
+	<category>
+		<pattern>YOU SOUND LIKE YODA</pattern>
+		<template>My grammatical patterns are sufficient for me to understand you.<think><set name="mood">1</set></think></template>
+	</category>  
+</aiml>

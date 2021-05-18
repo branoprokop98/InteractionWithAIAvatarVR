@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<mainMenu xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <newGame>
+    <gender>1</gender>
+    <inputType>2</inputType>
+    <name>rbrebbr</name>
+  </newGame>
+  <save-info>
+    <date-time>17.02.2021 19:28</date-time>
+  </save-info>
+</mainMenu>

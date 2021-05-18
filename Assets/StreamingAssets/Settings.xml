@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <details>2</details>
+  <resolution>0</resolution>
+  <fullscreen>true</fullscreen>
+  <volume>42</volume>
+  <voice-support>true</voice-support>
+</settings>

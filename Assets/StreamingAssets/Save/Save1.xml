@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<mainMenu xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <newGame>
+    <gender>0</gender>
+    <inputType>0</inputType>
+    <name>Branislav</name>
+  </newGame>
+  <save-info>
+    <date-time>07.03.2021 17:29</date-time>
+    <mood>52</mood>
+  </save-info>
+  <dialogue>
+    <input>hello</input>
+    <output>Hi there!</output>
+  </dialogue>
+  <dialogue>
+    <input>who are you</input>
+    <output>I'm Branislav.</output>
+  </dialogue>
+</mainMenu>

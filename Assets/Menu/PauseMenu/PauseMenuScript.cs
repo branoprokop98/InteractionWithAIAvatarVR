@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Menu.SaveLoadGame;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
@@ -13,6 +14,11 @@ namespace Menu.PauseMenu
         private SaveGameController save;
 
         private InputDevice inputDevice;
+
+        public XRController left;
+        public XRController right;
+        public InputHelpers.Button  activateButton;
+        public float activationThreshold = 0.1f;
 
 
         private bool isPaused;
@@ -49,6 +55,7 @@ namespace Menu.PauseMenu
         void Update()
         {
             bool triggerValue;
+            var device = XRNode.RightHand;
             if (inputDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.menuButton,
                     out triggerValue)
                 && triggerValue)
@@ -75,6 +82,11 @@ namespace Menu.PauseMenu
             //     }
             // }
         }
+
+        // public bool checkIfActivated(XRController controller)
+        // {
+        //     InputHelpers.IsPressed(controller., activateButton, out bool isActivated, activationThreshold);
+        // }
 
         public void resume()
         {

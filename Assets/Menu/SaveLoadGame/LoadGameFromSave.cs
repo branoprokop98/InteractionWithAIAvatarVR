@@ -13,6 +13,7 @@ public class LoadGameFromSave : MonoBehaviour
 {
     private string saveGameLocation;
     [SerializeField] private Image image;
+    [SerializeField] private Button deleteButton;
     private List<Button> buttons;
 
     private string destinationFile;
@@ -39,18 +40,28 @@ public class LoadGameFromSave : MonoBehaviour
     private void findSaves()
     {
         string[] fileEntries = Directory.GetFiles(saveGameLocation, "*.xml");
-        for (int i = 0; i < fileEntries.Length; i++)
+        for (int i = 0; i < buttons.Count; i++)
         {
-            string sourceFile = fileEntries[i];
-            buttons[i].interactable = true;
-            MenuInteraction menuInteraction = XMLWorker.deserialize<MenuInteraction>(sourceFile);
-            buttons[i].GetComponentInChildren<Text>().text = menuInteraction.saveInfo.DateTime + " " +
-                                                             menuInteraction.newGame.name + " " +
-                                                             getGenderType(menuInteraction) + " " +
-                                                             getInputType(menuInteraction);
-            var i1 = i;
-            buttons[i].onClick.AddListener(() => replaceMenuForSave(sourceFile, i1));
-            buttons[i].onClick.AddListener(()=>selectButton(i1));
+            try
+            {
+                string sourceFile = fileEntries[i];
+                buttons[i].interactable = true;
+                MenuInteraction menuInteraction = XMLWorker.deserialize<MenuInteraction>(sourceFile);
+                buttons[i].GetComponentInChildren<Text>().text = menuInteraction.saveInfo.DateTime + " " +
+                                                                 menuInteraction.newGame.name + " " +
+                                                                 getGenderType(menuInteraction) + " " +
+                                                                 getInputType(menuInteraction);
+                var i1 = i;
+                buttons[i].onClick.RemoveAllListeners();
+                buttons[i].onClick.AddListener(() => replaceMenuForSave(sourceFile, i1));
+                buttons[i].onClick.AddListener(()=>selectButton(i1));
+                Canvas.ForceUpdateCanvases();
+            }
+            catch (Exception e)
+            {
+                buttons[i].GetComponentInChildren<Text>().text = "Empty slot";
+                buttons[i].GetComponentInChildren<Button>().interactable = false;
+            }
         }
 
         foreach (string fileName in fileEntries)
@@ -88,9 +99,21 @@ public class LoadGameFromSave : MonoBehaviour
     }
 
 
+    private void deleteSave(string sourceFileName)
+    {
+        if (File.Exists(sourceFileName))
+        {
+            File.Delete(sourceFileName);
+            buttons.Clear();
+            loadSaveButtons();
+            findSaves();
+        }
+    }
 
     private void replaceMenuForSave(string sourceFileName, int i)
     {
+        deleteButton.onClick.RemoveAllListeners();
+        deleteButton.onClick.AddListener(() => deleteSave(sourceFileName));
         File.Copy(sourceFileName, destinationFile, true);
         updateConfig();
         Debug.LogWarning("Buttin number: " + i);

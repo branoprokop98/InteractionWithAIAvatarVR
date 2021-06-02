@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <mainMenu xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <newGame>
-    <gender>0</gender>
-    <inputType>0</inputType>
-    <name />
+    <gender>1</gender>
+    <inputType>1</inputType>
+    <name>Emma</name>
   </newGame>
   <save-info>
     <mood>-1</mood>
